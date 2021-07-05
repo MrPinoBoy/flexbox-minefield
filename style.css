@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: lightseagreen;
+}
+.wrap {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mineGrid, .mineGrid2 {
+    position: fixed;
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-flow: row wrap;
+    border-top: 8px solid grey;
+    border-right: 8px solid white;
+    border-bottom: 8px solid white;
+    border-left:8px solid grey;
+    z-index: 0;
+}
+.mineGrid2 {
+    z-index: 1;
+}
+.mineGrid div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+img {
+    max-width: 80%;
+}
+.case1 {
+    color: blue;
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+}
+.case2 {
+    color: green;
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+}
+.case3 {
+    color: red;
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+}
+.case4 {
+    color: blueviolet;
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+
+}
+.caseMine {
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    overflow: hidden;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+
+}
+.caseBlank {
+    width: 46px;
+    height: 46px;
+    background-color: lightgrey;
+    border-right: 4px dotted black;
+    border-bottom: 4px dotted black;
+}
+/*.caseHidden {
+    position:relative;
+    width: 48px;
+    height: 48px;
+}*/
+.caseHidden {
+    content: '';
+    width: 42px;
+    height: 42px;
+    background-color: lightgrey;
+    border-top: 4px solid white;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    border-left: 4px solid white;
+    box-shadow: inset 0px -4px grey, inset -4px 0px grey;
+}
+.caseHidden:hover {
+    opacity: 0%;
+}
+/*Try and understand with :after*/
