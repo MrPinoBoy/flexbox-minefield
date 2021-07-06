@@ -2,9 +2,15 @@
     padding: 0;
     margin: 0;
 }
+
 body {
     background-color: lightseagreen;
+    font-family: 'Qahiri', sans-serif;
+    font-size: 50px;
 }
+
+/* Playfield*/
+
 .wrap {
     height: 100vh;
     width: auto;
@@ -12,7 +18,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-.mineGrid, .mineGrid2 {
+
+.mineGrid{
     position: fixed;
     display: flex;
     width: 400px;
@@ -24,18 +31,16 @@ body {
     border-left:8px solid grey;
     z-index: 0;
 }
-.mineGrid2 {
-    z-index: 1;
-}
+
+/* Cases */
+
 .mineGrid div {
     justify-content: center;
     display: flex;
     align-items: center;
-    font-size: 40px;
+    cursor: default;
 }
-img {
-    max-width: 80%;
-}
+
 .case1 {
     color: blue;
     width: 46px;
@@ -44,6 +49,7 @@ img {
     border-right: 4px dotted black;
     border-bottom: 4px dotted black;
 }
+
 .case2 {
     color: green;
     width: 46px;
@@ -52,6 +58,7 @@ img {
     border-right: 4px dotted black;
     border-bottom: 4px dotted black;
 }
+
 .case3 {
     color: red;
     width: 46px;
@@ -60,6 +67,7 @@ img {
     border-right: 4px dotted black;
     border-bottom: 4px dotted black;
 }
+
 .case4 {
     color: blueviolet;
     width: 46px;
@@ -69,15 +77,20 @@ img {
     border-bottom: 4px dotted black;
 
 }
+
 .caseMine {
     width: 46px;
     height: 46px;
     background-color: lightgrey;
-    overflow: hidden;
     border-right: 4px dotted black;
     border-bottom: 4px dotted black;
 
 }
+
+img {
+    max-width: 80%;
+}
+
 .caseBlank {
     width: 46px;
     height: 46px;
@@ -85,23 +98,31 @@ img {
     border-right: 4px dotted black;
     border-bottom: 4px dotted black;
 }
-/*.caseHidden {
-    position:relative;
-    width: 48px;
-    height: 48px;
-}*/
+
 .caseHidden {
-    content: '';
+    position: relative;
+    width: 46px;
+    height: 46px;
+}
+
+.caseHidden::after {/* ::after creates the same element and places it at the back of its parent,
+                    so we give the parent a position, the child an absolute position and we move the child on top of the parent*/
     width: 42px;
     height: 42px;
-    background-color: lightgrey;
+    background-color: rgb(211, 211, 211);
     border-top: 4px solid white;
     border-right: 4px solid black;
     border-bottom: 4px solid black;
     border-left: 4px solid white;
     box-shadow: inset 0px -4px grey, inset -4px 0px grey;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    content: '';
+    cursor: pointer;
 }
-.caseHidden:hover {
+
+.caseHidden:hover::after {
     opacity: 0%;
 }
-/*Try and understand with :after*/
